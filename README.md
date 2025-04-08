@@ -1,85 +1,22 @@
-# expr2tac-Syntax-Directed-Translator
+# Syntax-Directed Translator for Simple Mathematical Expressions
 
-# 🧮 Syntax-Directed Translator for Simple Mathematical Expressions
+## Project Description
 
-## 📖 Project Description
+The **Syntax-Directed Translator for Simple Mathematical Expressions** is a tool that translates simple arithmetic expressions into a target representation, such as assembly-like instructions (3-address code). The translator takes expressions like `2 + 3 * 4` and processes them based on operator precedence and associativity. It will also print the value of the evaluated expression.
 
-This project implements a **Syntax-Directed Translator (SDT)** for evaluating and translating simple arithmetic expressions using **Flex** and **Bison**.
-https://github.com/MahirTanzim/expr2tac-Syntax-Directed-Translator/blob/main/README.md
-Given an input expression such as `2 + 3 * 4`, the translator:
+### Key Features:
+- **Three-Address Code Generation** (Not Done)
+- **Evaluation of Expressions** to calculate and print their value (Done)
+- **Error Handling** (e.g., Division by Zero – Not Done)
+- **Expression Parsing** including handling of parenthesis and floating point numbers (Not Done)
+- **Support for Mathematical Operations** such as addition, subtraction, multiplication, and more (Power, Floating Point values, etc. – Not Done)
 
-- Parses the expression considering **operator precedence** and **associativity**
-- Evaluates and **prints the result** of the expression
-- Translates the input into **assembly-like instructions (Three Address Code - TAC)** (to be implemented)
+## How to Run the Code
 
-The goal is to simulate how a compiler frontend might generate intermediate representations during expression parsing.
+### Prerequisites:
+Ensure that you have **Bison** and **Flex** installed on your system. If not, follow the steps below for installation (specific to Ubuntu).
 
----
-
-## 🚀 How to Run the Project
-
-### 1. Clone this Repository
-
+#### Installing Bison and Flex (if not installed):
 ```bash
-git clone https://github.com/your-username/sdt-expression-parser.git
-cd sdt-expression-parser
-2. Open Terminal in the Project Folder
-Make sure you're in the correct directory after cloning.
-
-3. Compile and Run
-Run the following commands to build and execute the project:
-
-bash
-Copy
-Edit
-flex lexer.l
-bison -d parser.y
-gcc expr.tab.c lex.yy.c -o sdt
-./sdt
-4. (Optional) Install Bison and Flex on Ubuntu
-If bison or flex is not installed, run the following command:
-
-bash
-Copy
-Edit
-sudo apt update
-sudo apt install bison flex
-🔧 Project Progress & Features
-Feature	Status
-✅ Evaluate and display result of expression	Done
-🛠️ Generate Three Address Code	Not Done
-❌ Handle divide-by-zero gracefully	Not Done
-❌ Support parentheses ( ) in expressions	Not Done
-❌ Support for floating point numbers	Not Done
-❌ Support for exponentiation (^)	Not Done
-📝 Example
-Input:
-
-Copy
-Edit
-2 + 3 * 4
-Expected Output:
-
-makefile
-Copy
-Edit
-Result = 14
-Three Address Code:
-t1 = 3 * 4
-t2 = 2 + t1
-(Note: Three Address Code generation is still pending implementation.)
-
-📌 Future Enhancements
- Full TAC generation for complex expressions
-
- Better error handling (e.g., divide by zero)
-
- Add support for parentheses
-
- Floating-point and power operations
-
- Modularize the code and improve syntax tree visualization
-
-👨‍💻 Author
-Developed by [Your Name] — 4th Year CSE Student | Enthusiast in Compilers and Systems Programming
-Feel free to fork, contribute, or raise issues!
+sudo apt-get update
+sudo apt-get install bison flex
