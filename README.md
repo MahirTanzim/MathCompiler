@@ -2,7 +2,7 @@
 ---
 ## Project Description
 
-The **Syntax-Directed Translator for Simple Mathematical Expressions** is a tool that translates simple arithmetic expressions into a target representation, such as assembly-like instructions (3-address code). The translator takes expressions like `2 + 3 * 4` and processes them based on operator precedence and associativity.
+The **Syntax-Directed Translator for Simple Mathematical Expressions** is a tool that translates simple arithmetic expressions into a target representation, such as assembly-like instructions (3-address code). The translator processes expressions like `2 + 3 * 4` based on operator precedence and associativity.
 
 
 ## What is Syntax Directed Translation(SDT)?
@@ -24,13 +24,13 @@ sudo apt-get install bison flex
 #### Clone the project:
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/MahirTanzim/Syntax-Directed-Translator.git
 ```
 
 #### Go to the project directory:
 
 ```bash
-  cd my-project
+  cd Syntax-Directed-Translator
 ```
 
 #### Run Flex file:
