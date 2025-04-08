@@ -1,9 +1,9 @@
 %{
+
 %}
 
 %union {
 	int num;
-	
 }
 
 %token EDL
@@ -37,7 +37,6 @@ exp:
 int main(){
 
 	yyparse();
-	
 	return 0;
 	
 }
