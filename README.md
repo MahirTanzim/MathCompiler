@@ -61,6 +61,6 @@ Now the in the terminal, the program will be asked for a  Mathematical expressio
 ### Project Update:
 - ❌ Three-address code generation
 - ✅ Show the value of the expression 
-- ❌ Handle divide by zero problem 
-- ❌ Handle parentheses in the expression 
-- ❌ Floating point values 
+- ✅ Handle divide by zero problem 
+- ✅ Handle parentheses in the expression 
+- ✅ Floating point values 
