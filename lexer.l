@@ -4,12 +4,15 @@
 
 
 %%
-[0-9]+ { yylval.num = atoi(yytext); return NUMBER; }
+[0-9]+ { yylval.fval = atof(yytext); return NUMBER;}
+[0-9]+"."[0-9]+ { yylval.fval = atof(yytext); return NUMBER; }
 "+" {return ADD;}
 "-" {return SUB;}
 "*" {return MULT;}
 "/" {return DIV;}
-\n {return EDL;}
+\n	{return EDL;}
+"(" {return LP;}
+")" {return RP;}
 .  {}
 %%
 
