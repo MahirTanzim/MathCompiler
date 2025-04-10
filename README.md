@@ -1,15 +1,19 @@
-# Syntax-Directed Translator for Simple Mathematical Expressions
+# MathCompiler: Compiler-Based Scientific Calculator with Advanced Function Support.
 ---
 ## Project Description
+A simple scientific calculator implemented using compiler construction techniques. Built with Flex for lexical analysis and Bison for parsing, this project demonstrates how compiler theory can be applied to create a practical mathematical expression evaluator.
 
-The **Syntax-Directed Translator for Simple Mathematical Expressions** is a tool that translates simple arithmetic expressions into a target representation, such as assembly-like instructions (3-address code). The translator processes expressions like `2 + 3 * 4` based on operator precedence and associativity.
+## Features
 
+- Basic arithmetic operations (addition, subtraction, multiplication, division) ✅
+- Proper operator precedence and parentheses support ✅
+- Floating-point number handling ✅
+- Advanced mathematical functions (planned):   (not implemented yet) 
 
-## What is Syntax Directed Translation(SDT)?
-Syntax-directed translation (SDT) is a compiler implementation method where source language translation is driven by the parser, associating semantic actions and attributes with grammar rules to facilitate the transformation of source code into intermediate or target code. 
-
-
-
+  * Trigonometric functions (sin, cos, tan)
+  * Logarithmic functions
+  * Exponential operations
+  * Constants (π, e)
 
 ## Run Locally
 ### Prerequisites:
@@ -50,17 +54,12 @@ This Will create two files, `parser.tab.c` and `parser.tab.h`.
 ```bash
   gcc lex.yy.c parser.tab.c -o sdt.out
 ```
-After that an executable file named `sdt.out` will be created. Which is our project.
+After that an executable file named `sdt.out` will be created. Which is our project. (You may see some warnings. Ignore them)
 
 #### Executing the program:
 ```bash
   ./sdt.out
 ```
-Now the in the terminal, the program will be asked for a  Mathematical expression to translate it into the 3 address code. 
 
-### Project Update:
-- ❌ Three-address code generation
-- ✅ Show the value of the expression 
-- ✅ Handle divide by zero problem 
-- ✅ Handle parentheses in the expression 
-- ✅ Floating point values 
+
+
