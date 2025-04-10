@@ -28,7 +28,7 @@ sudo apt-get install bison flex
 #### Clone the project:
 
 ```bash
-  git clone https://github.com/MahirTanzim/Syntax-Directed-Translator.git
+  git clone https://github.com/MahirTanzim/MathCompiler.git
 ```
 
 #### Go to the project directory:
@@ -48,13 +48,13 @@ This will create a .c file named `lex.yy.c`.
 ```bash
   bison -d -t parser.y
 ```
-This Will create two files, `parser.tab.c` and `parser.tab.h`.
+This will create two files, `parser.tab.c` and `parser.tab.h`.
 
 #### Compile `lex.yy.c` and `parser.tab.c`:
 ```bash
   gcc lex.yy.c parser.tab.c -o sdt.out
 ```
-After that an executable file named `sdt.out` will be created. Which is our project. (You may see some warnings. Ignore them)
+After that, an executable file named `sdt.out` will be created. (You may see some warnings. Ignore them)
 
 #### Executing the program:
 ```bash
