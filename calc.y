@@ -13,9 +13,12 @@
 %union {
     int num;
     char symbol;
+
     float fval;
 }
 
+
+/* initializing tokens */
 %token EDL ERROR
 %token<fval> NUMBER
 %type<fval> exp
@@ -27,12 +30,16 @@
 %token LP
 %token RP
 
+/* setting up the lowest to higest precedence */
+
 %left ADD SUB
 %left MULT DIV
 %right POW  
 %right UMINUS
 
 %%
+
+
 input: 
 |   line input
 ;
@@ -58,16 +65,20 @@ exp:
     | exp POW exp { $$ = pow($1, $3); }  
     | SUB exp %prec UMINUS { $$ = -$2; } 
     | LP exp RP { $$ = $2; }
+
+
 %%
+
+
 
 int main(){
     printf("Enter an expression:\n");
+
     return yyparse();
 }
 
 void yyerror(char* s){
-    printf("ERROR : %s", s);
-    
-    printf("\n");
+
+    printf("ERROR : %s\n", s);
     return;
 }
