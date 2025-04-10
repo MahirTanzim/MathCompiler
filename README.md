@@ -42,7 +42,7 @@ This will create two files, `parser.tab.c` and `parser.tab.h`.
 
 #### Compile `lex.yy.c` and `parser.tab.c`:
 ```bash
-gcc lex.yy.c parser.tab.c -o calc.out -lm
+gcc lex.yy.c calc.tab.c -o calc.out -lm
 ```
 After that, an executable file named `sdt.out` will be created. (You may see some warnings. Ignore them)
 
