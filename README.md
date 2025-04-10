@@ -40,25 +40,25 @@ sudo apt-get install bison flex
 #### Run Flex file:
 
 ```bash
-  flex lexer.l
+  flex calc.l
 ```
 This will create a .c file named `lex.yy.c`.
 #### Run Bison File:
 
 ```bash
-  bison -d -t parser.y
+  bison -d -t calc.y
 ```
 This will create two files, `parser.tab.c` and `parser.tab.h`.
 
 #### Compile `lex.yy.c` and `parser.tab.c`:
 ```bash
-  gcc lex.yy.c parser.tab.c -o sdt.out
+  gcc gcc lex.yy.c parser.tab.c -o calc.out -lm
 ```
 After that, an executable file named `sdt.out` will be created. (You may see some warnings. Ignore them)
 
 #### Executing the program:
 ```bash
-  ./sdt.out
+  ./calc.out
 ```
 
 
