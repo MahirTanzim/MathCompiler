@@ -3,17 +3,7 @@
 ## Project Description
 A simple scientific calculator implemented using compiler construction techniques. Built with Flex for lexical analysis and Bison for parsing, this project demonstrates how compiler theory can be applied to create a practical mathematical expression evaluator.
 
-## Features
 
-- Basic arithmetic operations (addition, subtraction, multiplication, division) ✅
-- Proper operator precedence and parentheses support ✅
-- Floating-point number handling ✅
-- Advanced mathematical functions (planned):   (not implemented yet) 
-
-  * Trigonometric functions (sin, cos, tan)
-  * Logarithmic functions
-  * Exponential operations ✅
-  * Constants (π, e)
 
 ## Run Locally
 ### Prerequisites:
