@@ -18,31 +18,31 @@ sudo apt-get install bison flex
 #### Clone the project:
 
 ```bash
-  git clone https://github.com/MahirTanzim/MathCompiler.git
+git clone https://github.com/MahirTanzim/MathCompiler.git
 ```
 
 #### Go to the project directory:
 
 ```bash
-  cd Syntax-Directed-Translator
+cd MathCompiler
 ```
 
 #### Run Flex file:
 
 ```bash
-  flex calc.l
+flex calc.l
 ```
 This will create a .c file named `lex.yy.c`.
 #### Run Bison File:
 
 ```bash
-  bison -d -t calc.y
+bison -d -t calc.y
 ```
 This will create two files, `parser.tab.c` and `parser.tab.h`.
 
 #### Compile `lex.yy.c` and `parser.tab.c`:
 ```bash
-  gcc gcc lex.yy.c parser.tab.c -o calc.out -lm
+gcc lex.yy.c parser.tab.c -o calc.out -lm
 ```
 After that, an executable file named `sdt.out` will be created. (You may see some warnings. Ignore them)
 
