@@ -12,7 +12,7 @@ A simple scientific calculator implemented using compiler construction technique
 
   * Trigonometric functions (sin, cos, tan)
   * Logarithmic functions
-  * Exponential operations
+  * Exponential operations ✅
   * Constants (π, e)
 
 ## Run Locally
