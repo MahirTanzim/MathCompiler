@@ -38,13 +38,13 @@ This will create a .c file named `lex.yy.c`.
 ```bash
 bison -d -t calc.y
 ```
-This will create two files, `parser.tab.c` and `parser.tab.h`.
+This will create two files, `calc.tab.c` and `calc.tab.h`.
 
-#### Compile `lex.yy.c` and `parser.tab.c`:
+#### Compile `lex.yy.c` and `calc.tab.c`:
 ```bash
 gcc lex.yy.c calc.tab.c -o calc.out -lm
 ```
-After that, an executable file named `sdt.out` will be created. (You may see some warnings. Ignore them)
+After that, an executable file named `calc.out` will be created. (You may see some warnings. Ignore them)
 
 #### Executing the program:
 ```bash
