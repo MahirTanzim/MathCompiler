@@ -10,9 +10,6 @@
 "help"      { return HELP; }
 [0-9]+(\.[0-9]+)?([eE][-+]?[0-9]+)? { yylval.fval = atof(yytext); return NUMBER; }
 "ans" { return ANS; }
-"pi" { yylval.fval = 3.1415926535; return NUMBER; }
-"e" { yylval.fval = 2.7182818284; return NUMBER; }
-"g" { yylval.fval = 9.80665; return NUMBER; }
 "pi"   { yylval.fval = 3.1415926535; return NUMBER; }
 "e"    { yylval.fval = 2.7182818284; return NUMBER; }
 "g"    { yylval.fval = 9.80665; return NUMBER; }
@@ -52,7 +49,7 @@
 "\n" { return EDL; }
 [a-zA-Z_][a-zA-Z0-9_]* { yylval.symbol = strdup(yytext); return IDENTIFIER; }
 [ \t]+ {}
-. { printfreturn ERROR; }
+. { return ERROR; }
 
 %%
 int yywrap() { return 1; }
