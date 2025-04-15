@@ -24,7 +24,11 @@
 "pi" { yylval.fval = 3.1415926535; return NUMBER; }
 "e"  { yylval.fval = 2.7182818284; return NUMBER; }
 [ \t] {}  
-.  {return ERROR; }  
+.  { 
+    printf(">> ERROR: Unknown character '%s'\n", yytext); 
+    return ERROR; 
+}
+ 
 "exit" { exit(0); }
 %%
 
