@@ -6,8 +6,6 @@
     void yyerror(char *s);
     extern int yylex();
     
-    
-
 %}
 
 %union {
@@ -29,6 +27,7 @@
 
 /* setting up the lowest to higest precedence */
 
+
 %left ADD SUB
 %left MULT DIV
 %right POW  
@@ -38,13 +37,22 @@
 
 
 input: 
-|   line input
+|   line {printf(">> ");} input
 ;
 
 line:
-    exp EDL { if ((int)$1 == $1) printf("%d\n", (int)$1); else printf("%.2f\n", $1); }
-    | ERROR { yyerror("Invalid character"); }
-    | EDL;
+      exp EDL { 
+      	  
+      	  if($1 == 'a' || $1 == 'b' || $1 == 'c') {}
+          else if ((int)$1 == $1) 
+              printf(">> %d\n", (int)$1); 
+          else 
+              printf(">> %.2f\n", $1); 
+      }
+    | ERROR EDL { yyerror("Invalid character");}
+    | error EDL { yyerror("Syntax error");}
+    | EDL
+    ;
 
 exp: 
     NUMBER { $$ = $1; } 
@@ -54,7 +62,7 @@ exp:
     | exp DIV exp { 
         if($3 == 0) {
             yyerror("Division by zero");
-            $$ = 0; 
+            $$ = 'a';
         } else {
             $$ = $1 / $3;
         }
@@ -67,13 +75,13 @@ exp:
     | LOG LP exp RP { 
         if($3 <= 0) {
             yyerror("Log of non-positive number");
-            $$ = 0;
+            $$ = 'b';
         } else $$ = log10($3);
     }
     | SQRT LP exp RP {
         if($3 < 0) {
             yyerror("Square root of negative number");
-            $$ = 0;
+            $$ = 'c';
         } else $$ = sqrt($3);
     }
 %%
@@ -91,6 +99,6 @@ int main() {
 
 void yyerror(char* s){
 
-    printf("ERROR : %s\n", s);
+    printf(">> ERROR : %s\n", s);
     return;
 }
