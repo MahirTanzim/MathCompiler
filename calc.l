@@ -17,8 +17,15 @@
 \n  { return EDL;}
 "(" { return LP;}
 ")" {return RP;}
+"sin" { return SIN; }
+"cos" { return COS; }
+"log" { return LOG; }
+"sqrt" { return SQRT; }
+"pi" { yylval.fval = 3.1415926535; return NUMBER; }
+"e"  { yylval.fval = 2.7182818284; return NUMBER; }
 [ \t] {}  
 .  {return ERROR; }  
+"exit" { exit(0); }
 %%
 
 yywrap(){

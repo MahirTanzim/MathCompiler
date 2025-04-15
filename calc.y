@@ -22,13 +22,10 @@
 %token EDL ERROR
 %token<fval> NUMBER
 %type<fval> exp
-%token ADD
-%token SUB
-%token MULT
-%token DIV
-%token POW  
-%token LP
-%token RP
+%token ADD SUB MULT DIV
+%token POW SQRT
+%token LP RP
+%token SIN COS LOG 
 
 /* setting up the lowest to higest precedence */
 
@@ -65,17 +62,32 @@ exp:
     | exp POW exp { $$ = pow($1, $3); }  
     | SUB exp %prec UMINUS { $$ = -$2; } 
     | LP exp RP { $$ = $2; }
-
-
+    | SIN LP exp RP { $$ = sin($3); }
+    | COS LP exp RP { $$ = cos($3); }
+    | LOG LP exp RP { 
+        if($3 <= 0) {
+            yyerror("Log of non-positive number");
+            $$ = 0;
+        } else $$ = log10($3);
+    }
+    | SQRT LP exp RP {
+        if($3 < 0) {
+            yyerror("Square root of negative number");
+            $$ = 0;
+        } else $$ = sqrt($3);
+    }
 %%
 
 
 
-int main(){
-    printf("Enter an expression:\n");
-
-    return yyparse();
+int main() {
+    printf("Welcome to Scientific Calculator! Type 'exit' to quit.\n");
+    while (1) {
+        printf(">> ");
+        yyparse();
+    }
 }
+
 
 void yyerror(char* s){
 
